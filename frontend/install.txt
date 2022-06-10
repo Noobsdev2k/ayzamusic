@@ -1,0 +1,5 @@
+npm install sass react-infinite-scroll-component 
+react-lazy-load-image-component 
+react-input-slider react-router-dom moment 
+file-saver antd axios react-redux react-toastify 
+jwt-decode @reduxjs/toolkit redux
