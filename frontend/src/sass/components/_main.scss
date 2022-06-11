@@ -1,0 +1,36 @@
+.main {
+  padding: 30px 35px 0;
+}
+.heading {
+  font-size: 25px;
+  color: $gray;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.count {
+  font-weight: 600;
+}
+
+.title {
+  margin-bottom: 10px;
+  color: $gray;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  line-height: 1.4;
+}
+.author {
+  text-transform: capitalize;
+  color: $gray-light;
+}
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  grid-gap: 25px;
+}

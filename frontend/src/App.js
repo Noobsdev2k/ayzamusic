@@ -1,11 +1,22 @@
-import "./App.scss";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
+
+import Sidebar from "./components/Sidebar";
+import Routes from "./config/routes";
+
+import "./sass/app.scss";
 
 function App() {
   return (
-    <div className="App">
-      hello world!!!
-      <>hung dep trai</>
-      <div>test</div>
+    <div className="wrapper">
+      <BrowserRouter>
+        <Sidebar />
+        <div className="main">
+          <Header />
+
+          <Routes></Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

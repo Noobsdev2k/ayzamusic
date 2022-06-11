@@ -1,0 +1,73 @@
+@media screen and (max-width: 1279px) {
+  .sidebar {
+    display: none;
+  }
+  .wrapper {
+    display: block;
+  }
+  .content {
+    grid-template-columns: 100%;
+    grid-row-gap: 50px;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 30px 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .billboard-list {
+    display: grid;
+    justify-content: flex-start;
+    grid-auto-columns: 60%;
+    grid-auto-flow: column;
+    grid-gap: 1.5rem;
+    overflow: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 1rem;
+    padding: 20px;
+    grid-template-columns: unset;
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+    }
+    & > * {
+      scroll-snap-align: start;
+    }
+  }
+  .song-list {
+    max-height: unset;
+    overflow: unset;
+    padding: 0;
+  }
+  .main {
+    padding: 20px 20px 0;
+  }
+  .song-title,
+  .song-album {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    max-width: 100px;
+  }
+  .song-album {
+    max-width: 50px;
+  }
+  .heading {
+    font-size: 20px;
+  }
+  .title {
+    font-size: 14px;
+  }
+  .author {
+    font-size: 12px;
+  }
+}

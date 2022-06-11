@@ -1,0 +1,63 @@
+.song {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.song *:not(.song-love) {
+  pointer-events: none;
+}
+.song-list {
+  padding: 10px;
+  max-height: 420px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.song-index {
+  font-weight: bold;
+  color: $gray;
+  margin-right: 15px;
+}
+.song-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.song-play {
+  margin: 0 15px;
+}
+.song-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: $gray;
+}
+.song-album {
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: auto;
+}
+.song-time {
+  margin: 0 auto;
+  font-weight: 400;
+  font-weight: 600;
+}
+.song-love {
+  cursor: pointer;
+  font-size: 16px;
+  input {
+    display: none;
+  }
+  input:checked + .song-heart {
+    color: $red;
+  }
+}
