@@ -2,10 +2,10 @@ import axios from "axios";
 
 const devEnv = process.env.NODE_ENV !== "production";
 
-const { SERVER_URL } = process.env;
-
+const { REACT_APP_SERVER_URL } = process.env;
+console.log(REACT_APP_SERVER_URL + "/api");
 const API = axios.create({
-  baseURL: `${devEnv && SERVER_URL}`,
+  baseURL: `${devEnv && REACT_APP_SERVER_URL}`,
 });
 
 API.interceptors.request.use((req) => {
