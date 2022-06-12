@@ -12,7 +12,7 @@ function App() {
         <Sidebar />
         <div className="main">
           <Header />
-          <Routes></Routes>
+          <Routes />
         </div>
       </BrowserRouter>
     </div>
