@@ -7,7 +7,7 @@ export default function Header() {
         <i className="search-icon fa fa-search"></i>
         <input
           type="text"
-          inputmode="search"
+          inputMode="search"
           placeholder="Search for song, arties etc..."
           className="search-input"
         />

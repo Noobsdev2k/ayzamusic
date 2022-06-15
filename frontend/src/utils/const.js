@@ -5,19 +5,19 @@ export const musicMenu = [
     Icon: <i className="fa fa-home menu-icon"></i>,
   },
   {
-    title: "Đã yêu thích",
+    title: "Favorite",
     href: "/favorite",
-    Icon: <i className="fa fa-square menu-icon"></i>,
+    Icon: <i className="fa menu-icon fa-heart"></i>,
   },
   {
-    title: "Bài hát đã nghe",
+    title: "History",
     href: "/listened-song",
-    Icon: <i className="fa fa-user menu-icon"></i>,
+    Icon: <i className="fa fa-clock-o menu-icon"></i>,
   },
   {
-    title: "Đã tải lên",
+    title: "Upload",
     href: "/upload-music",
-    Icon: <i className="fa fa-play menu-icon"></i>,
+    Icon: <i className="fa fa-upload menu-icon"></i>,
   },
 ];
 

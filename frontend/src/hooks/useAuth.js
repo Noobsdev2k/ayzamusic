@@ -12,7 +12,7 @@ import { onLogOutRemoveData } from "../store/reducer/history";
 import { useAppDispatch, useAppSelector } from "./useRedux";
 
 const accessTokenLocal = localStorage.getItem("accessToken");
-export const UseAccount = () => {
+export const UseAuthentication = () => {
   const dispatch = useAppDispatch();
 
   const resultAccount = useAppSelector(accountStore);

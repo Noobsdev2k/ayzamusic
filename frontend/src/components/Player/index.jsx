@@ -26,6 +26,7 @@ export default function Player() {
               max=""
               value="0"
               className="bar"
+              onChange={() => {}}
             />
             <audio src="./files/holo.mp3" id="song"></audio>
           </div>

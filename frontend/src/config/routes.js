@@ -1,8 +1,15 @@
-import React, { Suspense } from "react";
-import { Routes as Router, Route } from "react-router-dom";
+import React, { Suspense, useEffect } from "react";
+import { Routes as Router, Route, useNavigate } from "react-router-dom";
+import { UseAuthentication } from "../hooks/useAuth";
 import Config from "../utils/routes";
-
+const accessTokenLocal = localStorage.accessToken;
 const Routes = () => {
+  const { accessToken } = UseAuthentication();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!accessTokenLocal && !accessToken) navigate("/");
+  }, [accessToken, navigate]);
+
   return (
     <Suspense fallback={<></>}>
       <Router>

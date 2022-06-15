@@ -19,7 +19,7 @@ export default function Songs() {
           <h4 className="song-title">AmpyX Holo</h4>
           <h5 className="song-album">Pop King</h5>
           <time className="song-time">3:49</time>
-          <label for="love" className="song-love">
+          <label htmlFor="love" className="song-love">
             <input type="checkbox" name="love" id="love" />
             <i className="fa fa-heart song-heart"></i>
           </label>
@@ -35,7 +35,7 @@ export default function Songs() {
           <h4 className="song-title">AmpyX Home</h4>
           <h5 className="song-album">Pop King</h5>
           <time className="song-time">5:00</time>
-          <label for="love1" className="song-love">
+          <label htmlFor="love1" className="song-love">
             <input type="checkbox" name="love" id="love1" />
             <i className="fa fa-heart song-heart"></i>
           </label>
@@ -51,7 +51,7 @@ export default function Songs() {
           <h4 className="song-title">AmpyX Spark</h4>
           <h5 className="song-album">Pop King</h5>
           <time className="song-time">4:02</time>
-          <label for="love2" className="song-love">
+          <label htmlFor="love2" className="song-love">
             <input type="checkbox" name="love" id="love2" />
             <i className="fa fa-heart song-heart"></i>
           </label>
@@ -67,7 +67,7 @@ export default function Songs() {
           <h4 className="song-title">Last Summer</h4>
           <h5 className="song-album">Pop King</h5>
           <time className="song-time">2:46</time>
-          <label for="love3" className="song-love">
+          <label htmlFor="love3" className="song-love">
             <input type="checkbox" name="love" id="love3" />
             <i className="fa fa-heart song-heart"></i>
           </label>
