@@ -1,9 +1,11 @@
 import { Form, Input, Button, Modal } from "antd";
 import { UseAuthentication } from "../../hooks/useAuth";
+import { UseModal } from "../../hooks/useModal";
+import { ModalType } from "../../utils/const";
 
 export const ModalLogin = (props) => {
   const { handlePostLogin, loading } = UseAuthentication();
-
+  const { toggle } = UseModal();
   return (
     <Form
       initialValues={{ remember: true }}
@@ -48,6 +50,7 @@ export const ModalLogin = (props) => {
           className="w-full"
           style={{ height: "35px" }}
           loading={loading}
+          block
         >
           Đăng nhập
         </Button>
@@ -59,6 +62,12 @@ export const ModalLogin = (props) => {
           className="flex m-auto"
           style={{ fontSize: "16px", display: "block" }}
           block
+          onClick={() => {
+            toggle({
+              type: ModalType.REGISTER,
+              title: "Register",
+            });
+          }}
         >
           Đăng ký
         </Button>

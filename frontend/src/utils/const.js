@@ -1,3 +1,13 @@
+export const ModalType = {
+  ADD_LIST_MUSIC: "ADD_LIST_MUSIC",
+  LOGIN: "LOGIN",
+  REGISTER: "REGISTER",
+  EDIT_PLAYLIST: "EDIT_PLAYLIST",
+  UPLOAD_MUSIC: "UPLOAD_MUSIC",
+  EDIT_UPLOAD_MUSIC: "EDIT_UPLOAD_MUSIC",
+  NULL: null,
+  OPEN_COMMENT: "OPEN_COMMENT",
+};
 export const musicMenu = [
   {
     title: "Home",

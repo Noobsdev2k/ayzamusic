@@ -1,12 +1,14 @@
 import { Button } from "antd";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UseAuthentication } from "../../hooks/useAuth";
-import { musicMenu } from "../../utils/const";
+import { UseModal } from "../../hooks/useModal";
+import { ModalType, musicMenu } from "../../utils/const";
 
-export default function Sidebar({ setOpenModal }) {
-  const { accessToken, resultAccount } = UseAuthentication();
-
+export default function Sidebar() {
+  const { accessToken, resultAccount, handleOnLogOut } = UseAuthentication();
+  const navigate = useNavigate();
+  const { toggle } = UseModal();
   return (
     <div className="sidebar">
       {!accessToken ? (
@@ -23,7 +25,10 @@ export default function Sidebar({ setOpenModal }) {
             }
             size="large"
             onClick={() => {
-              setOpenModal(true);
+              toggle({
+                type: ModalType.LOGIN,
+                title: "Login",
+              });
             }}
           >
             Login
@@ -38,6 +43,20 @@ export default function Sidebar({ setOpenModal }) {
           />
           <h3 className="profile-name">{resultAccount.data.user_name}</h3>
           <span className="profile-position">{resultAccount.data.email}</span>
+          <Button
+            type="primary"
+            shape="round"
+            icon={
+              <i className="fa fa-sign-in menu-icon" aria-hidden="true"></i>
+            }
+            size="large"
+            onClick={() => {
+              handleOnLogOut();
+              navigate("/");
+            }}
+          >
+            Logout
+          </Button>
         </div>
       )}
 
