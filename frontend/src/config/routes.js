@@ -7,9 +7,11 @@ const Routes = () => {
   const { accessToken } = UseAuthentication();
   const navigate = useNavigate();
   useEffect(() => {
-    if (!accessTokenLocal && !accessToken) navigate("/");
+    if (!accessTokenLocal && !accessToken) {
+      console.log(`"accessToken:" ${!accessToken}`);
+      navigate("/home");
+    }
   }, [accessToken, navigate]);
-
   return (
     <Suspense fallback={<></>}>
       <Router>

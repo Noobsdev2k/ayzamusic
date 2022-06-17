@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UseAuthentication } from "../../hooks/useAuth";
 import { UseModal } from "../../hooks/useModal";
 import { ModalType, musicMenu } from "../../utils/const";
+import MenuItems from "./MenuItems";
 
 export default function Sidebar() {
   const { accessToken, resultAccount, handleOnLogOut } = UseAuthentication();
@@ -52,7 +53,7 @@ export default function Sidebar() {
             size="large"
             onClick={() => {
               handleOnLogOut();
-              navigate("/");
+              navigate("/home");
             }}
           >
             Logout
@@ -62,12 +63,13 @@ export default function Sidebar() {
 
       <ul className="menu">
         {musicMenu.map((item, index) => (
-          <li className="menu-item" key={index}>
-            <Link to={item.href} className="menu-link">
-              {item.Icon}
-              <span>{item.title}</span>
-            </Link>
-          </li>
+          <MenuItems
+            title={item.title}
+            icon={item.Icon}
+            href={item.href}
+            login={!accessToken}
+            key={index}
+          />
         ))}
       </ul>
     </div>

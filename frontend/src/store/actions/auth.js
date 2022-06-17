@@ -11,7 +11,7 @@ export const loginGoogle = createAsyncThunk(
 
 export const getProfile = createAsyncThunk("auth/profile", async () => {
   const response = await authAPI.getProfile();
-  return response;
+  return response.data;
 });
 
 export const signIn = createAsyncThunk("auth/login", async (data) => {

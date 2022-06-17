@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   getProfile,
@@ -9,13 +10,12 @@ import {
 } from "../store/actions/auth";
 import { accountStore } from "../store/reducer/auth";
 import { onLogOutRemoveData } from "../store/reducer/history";
-import { useAppDispatch, useAppSelector } from "./useRedux";
 
 const accessTokenLocal = localStorage.getItem("accessToken");
 export const UseAuthentication = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
-  const resultAccount = useAppSelector(accountStore);
+  const resultAccount = useSelector(accountStore);
   const { accessToken, loading, loadingGoogle } = resultAccount;
 
   // dispatch api

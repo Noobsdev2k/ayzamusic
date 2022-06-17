@@ -1,13 +1,14 @@
 import React from "react";
-
+import { useDispatch, useSelector } from "react-redux";
 import { modalStore, openModal } from "../store/reducer/modal";
-import { useAppDispatch, useAppSelector } from "./useRedux";
 
 export const UseModal = () => {
-  const resultModal = useAppSelector(modalStore);
-  const dispatch = useAppDispatch();
+  const resultModal = useSelector(modalStore);
+  const dispatch = useDispatch();
   const toggle = React.useCallback(
-    (data) => dispatch(openModal(data)),
+    (data) => {
+      dispatch(openModal(data));
+    },
     [dispatch]
   );
   return { resultModal, toggle };
