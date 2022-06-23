@@ -9,10 +9,9 @@ const API = axios.create({
 });
 
 API.interceptors.request.use((req) => {
-  if (localStorage.getItem("profile")) {
-    req.headers.Authorization = `Bearer ${
-      JSON.parse(localStorage.getItem("profile")).token
-    }`;
+  const accessToken = localStorage.accessToken;
+  if (accessToken) {
+    req.headers.Authorization = `Bearer ${accessToken}`;
   }
   return req;
 });

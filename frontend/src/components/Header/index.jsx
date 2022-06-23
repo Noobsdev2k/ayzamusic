@@ -1,6 +1,12 @@
 import React from "react";
+import { UseAuthentication } from "../../hooks/useAuth";
+import { UseModal } from "../../hooks/useModal";
+import { ModalType } from "../../utils/const";
 
 export default function Header() {
+  const { toggle } = UseModal();
+  const { accessToken } = UseAuthentication();
+
   return (
     <div className="header">
       <div className="search">
@@ -12,13 +18,23 @@ export default function Header() {
           className="search-input"
         />
       </div>
-      <div className="tool">
-        <i className="fa fa-bell tool-icon"></i>
-        <i className="tool-icon fa fa-cog"></i>
-        <a href="#" className="upgrade">
-          Upgrade plan
-        </a>
-      </div>
+      {accessToken && (
+        <div className="tool">
+          <i className="fa fa-bell tool-icon"></i>
+          <i className="tool-icon fa fa-cog"></i>
+          <a
+            className="upgrade"
+            onClick={() => {
+              toggle({
+                type: ModalType.UPLOAD_MUSIC,
+                title: "UploadMusic",
+              });
+            }}
+          >
+            Upgrade plan
+          </a>
+        </div>
+      )}
     </div>
   );
 }

@@ -12,6 +12,7 @@ import { accountStore } from "../store/reducer/auth";
 import { onLogOutRemoveData } from "../store/reducer/history";
 
 const accessTokenLocal = localStorage.getItem("accessToken");
+
 export const UseAuthentication = () => {
   const dispatch = useDispatch();
 
@@ -31,7 +32,11 @@ export const UseAuthentication = () => {
     [dispatch]
   );
   const getProfileAPI = React.useCallback(
-    () => accessTokenLocal && dispatch(getProfile()),
+    () =>
+      accessTokenLocal &&
+      dispatch(getProfile())
+        .then((response) => console.log(response))
+        .catch((error) => console.log(error)),
     [dispatch]
   );
 

@@ -9,14 +9,10 @@ import ModalUploadMusic from "./UploadMusic";
 
 const checkModal = (Type) => {
   switch (Type) {
-    case ModalType.ADD_LIST_MUSIC:
-      return ModalUploadMusic;
     case ModalType.LOGIN:
       return ModalLogin;
     case ModalType.REGISTER:
       return ModalRegister;
-    case ModalType.EDIT_PLAYLIST:
-      return ModalUploadMusic;
     case ModalType.UPLOAD_MUSIC:
     case ModalType.EDIT_UPLOAD_MUSIC:
       return ModalUploadMusic;

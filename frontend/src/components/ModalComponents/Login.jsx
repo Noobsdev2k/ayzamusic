@@ -1,9 +1,9 @@
-import { Form, Input, Button, Modal } from "antd";
+import { Form, Input, Button } from "antd";
 import { UseAuthentication } from "../../hooks/useAuth";
 import { UseModal } from "../../hooks/useModal";
 import { ModalType } from "../../utils/const";
 
-export const ModalLogin = (props) => {
+export const ModalLogin = () => {
   const { handlePostLogin, loading } = UseAuthentication();
   const { toggle } = UseModal();
   return (

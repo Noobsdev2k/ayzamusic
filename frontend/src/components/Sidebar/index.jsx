@@ -7,9 +7,16 @@ import { ModalType, musicMenu } from "../../utils/const";
 import MenuItems from "./MenuItems";
 
 export default function Sidebar() {
-  const { accessToken, resultAccount, handleOnLogOut } = UseAuthentication();
+  const { resultAccount, handleOnLogOut, getProfileAPI } = UseAuthentication();
   const navigate = useNavigate();
+  const { accessToken, data } = resultAccount;
+
+  React.useEffect(() => {
+    getProfileAPI();
+  }, [getProfileAPI]);
+
   const { toggle } = UseModal();
+
   return (
     <div className="sidebar">
       {!accessToken ? (
@@ -37,13 +44,9 @@ export default function Sidebar() {
         </div>
       ) : (
         <div className="profile">
-          <img
-            src={resultAccount.data.image}
-            alt=""
-            className="profile-avatar"
-          />
-          <h3 className="profile-name">{resultAccount.data.user_name}</h3>
-          <span className="profile-position">{resultAccount.data.email}</span>
+          <img src={data.image} alt="" className="profile-avatar" />
+          <h3 className="profile-name">{data.user_name}</h3>
+          <span className="profile-position">{data.email}</span>
           <Button
             type="primary"
             shape="round"
