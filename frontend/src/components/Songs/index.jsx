@@ -9,7 +9,7 @@ export default function Songs() {
     <div className="content-item">
       <div className="block-box">
         <h2 className="heading">Most popular</h2>
-        <span className="count">92 Songs</span>
+        <span className="count">{data.length} Songs</span>
       </div>
 
       <div className="song-list">

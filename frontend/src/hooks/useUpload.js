@@ -53,7 +53,6 @@ export const UseUploadMusic = () => {
   );
 
   const handleUploadMusicImage = (f) => {
-    console.log(f);
     const { file, fileList } = f;
     const isJpgOrPng =
       file.type === "image/jpeg" ||
@@ -69,7 +68,6 @@ export const UseUploadMusic = () => {
   };
 
   const handleUploadMusicSource = (f) => {
-    console.log(f);
     const { file, fileList } = f;
     const isTypeMusic = file.type === "audio/mpeg";
     if (!isTypeMusic) message.error("Bạn chỉ có thể tải lên tệp MP3!");

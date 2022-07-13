@@ -32,11 +32,7 @@ export const UseAuthentication = () => {
     [dispatch]
   );
   const getProfileAPI = React.useCallback(
-    () =>
-      accessTokenLocal &&
-      dispatch(getProfile())
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error)),
+    () => accessTokenLocal && dispatch(getProfile()),
     [dispatch]
   );
 
