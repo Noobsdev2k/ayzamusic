@@ -16,8 +16,22 @@ export default function Songs() {
         {loading ? (
           <CardLoading />
         ) : (
-          data.map((item) => {
-            return <CardSongs {...item} key={item._id} />;
+          data.map((item, index) => {
+            return (
+              <CardSongs
+                key={item._id}
+                timeFormat={item.time_format}
+                item={item}
+                nameMusic={item.name_music}
+                category={item.category}
+                image={item.image_music}
+                nameSinger={item.name_singer}
+                _id={item._id}
+                src_music={item.src_music}
+                data={data}
+                index={index}
+              />
+            );
           })
         )}
       </div>

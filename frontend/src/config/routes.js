@@ -10,7 +10,6 @@ const Routes = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (!accessTokenLocal && !accessToken) {
-      console.log(`"accessTokens:" ${!accessToken}`);
       navigate("/home");
     }
   }, [accessToken, navigate]);

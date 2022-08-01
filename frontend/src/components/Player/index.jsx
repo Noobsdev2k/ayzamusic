@@ -1,6 +1,17 @@
 import React from "react";
+import { UseMusic } from "../../hooks/useMusic";
 
 export default function Player() {
+  const {
+    resultMusic,
+    handleOnDropdownMusic,
+    playing,
+    dropdownMusic,
+    _id_music,
+  } = UseMusic();
+  const { data } = resultMusic;
+  const tempData = React.useMemo(() => data, [data]);
+  const { src_music, image_music, name_singer, link_mv, name_music } = tempData;
   return (
     <div className="content-item">
       <div className="block-box">
@@ -10,13 +21,9 @@ export default function Player() {
       <div className="player">
         <div className="player-box">
           <div className="player-media">
-            <img
-              src="https://cdn.dribbble.com/users/3960463/screenshots/14630140/media/c79331860d7ca1b97430a4888617f428.png?compress=1&resize=800x600"
-              alt=""
-              className="player-image"
-            />
+            <img src={image_music} alt="" className="player-image" />
           </div>
-          <h3 className="player-title title">AmpyX Holo</h3>
+          <h3 className="player-title title">{name_singer}</h3>
           <span className="player-author author">Pop King</span>
           <div className="progress">
             <input

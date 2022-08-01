@@ -1,14 +1,57 @@
 import React from "react";
+import { UseMusic } from "../../hooks/useMusic";
 
-export default function CardSongs(props) {
-  const { _id, image_music, name_music, category, time_format } = props;
+export default function CardSongs({
+  timeFormat,
+  nameMusic,
+  image,
+  _id,
+  index,
+  data,
+  oneMusic,
+  item,
+  category,
+}) {
+  const {
+    handleOnIndexMusic,
+    _id_music,
+    playing,
+    handlePausePlayClick,
+    handleOnChooseMusic,
+    handleOnPlaylist,
+  } = UseMusic();
+  const active = _id_music === _id && playing;
+
+  const onClickPlay = React.useCallback(() => {
+    const tempData = { index, data, _id };
+    if (_id === _id_music) handlePausePlayClick();
+    else if (oneMusic && item) handleOnChooseMusic(item);
+    else if (!oneMusic && item) handleOnPlaylist({ ...tempData, music: item });
+    else handleOnIndexMusic(tempData);
+  }, [
+    _id,
+    _id_music,
+    data,
+    handleOnChooseMusic,
+    handleOnIndexMusic,
+    handleOnPlaylist,
+    handlePausePlayClick,
+    index,
+    item,
+    oneMusic,
+  ]);
   return (
-    <div className="song" key={_id}>
-      <img src={image_music} alt="" className="song-image" />
-      <i className="fa fa-play song-play"></i>
-      <h4 className="song-title">{name_music}</h4>
+    <div className="song" onClick={onClickPlay}>
+      <img src={image} alt="" className="song-image" />
+      {active ? (
+        <i className="fa fa-play song-play" onClick={onClickPlay}></i>
+      ) : (
+        <i className="fa fa-play song-play" onClick={onClickPlay}></i>
+      )}
+
+      <h4 className="song-title">{nameMusic}</h4>
       <h5 className="song-album">{category}</h5>
-      <time className="song-time">{time_format}</time>
+      <time className="song-time">{timeFormat}</time>
       <label htmlFor="love" className="song-love">
         <input type="checkbox" name="love" id="love" />
         <i className="fa fa-heart song-heart"></i>
