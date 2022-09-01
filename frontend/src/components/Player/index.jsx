@@ -12,6 +12,7 @@ export default function Player() {
   const { data } = resultMusic;
   const tempData = React.useMemo(() => data, [data]);
   const { src_music, image_music, name_singer, link_mv, name_music } = tempData;
+
   return (
     <div className="content-item">
       <div className="block-box">
@@ -21,7 +22,15 @@ export default function Player() {
       <div className="player">
         <div className="player-box">
           <div className="player-media">
-            <img src={image_music} alt="" className="player-image" />
+            {!image_music ? (
+              <img
+                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+                alt=""
+                className="player-image"
+              />
+            ) : (
+              <img src={image_music} alt="" className="player-image" />
+            )}
           </div>
           <h3 className="player-title title">{name_singer}</h3>
           <span className="player-author author">Pop King</span>
