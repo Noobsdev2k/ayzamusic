@@ -2,12 +2,10 @@
     "version": 2,
     "build": [
         {
-            "src": "*.js", 
+            "src": "./index.js", 
             "use": "@vercel/node"
         }
     ],
-    
-  "buildCommand": "nodemon build",
     "routes":[
         {
             "src": "/(.*)",
