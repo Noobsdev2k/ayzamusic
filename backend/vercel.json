@@ -6,6 +6,8 @@
             "use": "@vercel/node"
         }
     ],
+    
+  "buildCommand": "nodemon build",
     "routes":[
         {
             "src": "/(.*)",
