@@ -44,7 +44,7 @@ export default function CardSongs({
     <div className="song" onClick={onClickPlay}>
       <img src={image} alt="" className="song-image" />
       {active ? (
-        <i className="fa fa-play song-play" onClick={onClickPlay}></i>
+        <i className="fa fa-pause song-play" onClick={onClickPlay}></i>
       ) : (
         <i className="fa fa-play song-play" onClick={onClickPlay}></i>
       )}

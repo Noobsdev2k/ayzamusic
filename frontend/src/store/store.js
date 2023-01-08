@@ -14,4 +14,6 @@ export default configureStore({
     uploadMusic: uploadReducer,
     music: musicReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }),
 });
